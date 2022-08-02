@@ -58,11 +58,13 @@
 /* 1366x768 multiplo de 15 */
 
 .gallery-pixel {
+    --box: 165px;
+    --h: 120px;
     display: grid;
     width: 100%;
     min-height: 100vh;
-    grid-template-columns:  repeat(7, 165px) 1fr;
-    grid-template-rows:  repeat(5, 120px) 1fr;
+    grid-template-columns: repeat(7, var(--box)) 1fr;
+    grid-template-rows: repeat(5, var(--h)) 1fr;
     grid-template-areas:
         "A1 A1 A1 A3 A3 A3 A3 A3"
         "A1 A1 A1 A3 A3 A3 A3 A3"
@@ -81,22 +83,55 @@
     transition: all .3s ease;
     transform: scale(.8);
 }
+
 .pixel-colher:hover {
     transform: scale(1);
 }
-.gallery-pixel-item > canvas {
+
+.gallery-pixel-item>canvas {
     position: absolute;
     width: 100% !important;
 }
 
-.pixel-colher-position-1 { left: var(--pixel-distance) ; top: var(--pixel-distance);}
-.pixel-colher-position-2 { right: var(--pixel-distance) ; top: var(--pixel-distance);}
-.pixel-colher-position-3 { right: var(--pixel-distance) ; bottom: var(--pixel-distance);}
-.pixel-colher-position-4 { left: var(--pixel-distance) ; bottom: var(--pixel-distance); }
-.pixel-colher-position-5 { left: var(--pixel-distance) ; top: var(--pixel-distance);}
-.pixel-colher-position-6 { right: var(--pixel-distance) ; top: var(--pixel-distance);}
-.pixel-colher-position-7 { right: var(--pixel-distance) ; bottom: var(--pixel-distance);}
-.pixel-colher-position-8 { left: var(--pixel-distance) ; bottom: var(--pixel-distance); }
+.pixel-colher-position-1 {
+    left: var(--pixel-distance);
+    top: var(--pixel-distance);
+}
+
+.pixel-colher-position-2 {
+    right: var(--pixel-distance);
+    top: var(--pixel-distance);
+}
+
+.pixel-colher-position-3 {
+    right: var(--pixel-distance);
+    bottom: var(--pixel-distance);
+}
+
+.pixel-colher-position-4 {
+    left: var(--pixel-distance);
+    bottom: var(--pixel-distance);
+}
+
+.pixel-colher-position-5 {
+    left: var(--pixel-distance);
+    top: var(--pixel-distance);
+}
+
+.pixel-colher-position-6 {
+    right: var(--pixel-distance);
+    top: var(--pixel-distance);
+}
+
+.pixel-colher-position-7 {
+    right: var(--pixel-distance);
+    bottom: var(--pixel-distance);
+}
+
+.pixel-colher-position-8 {
+    left: var(--pixel-distance);
+    bottom: var(--pixel-distance);
+}
 
 
 
@@ -113,7 +148,7 @@
     pointer-events: none;
 }
 
-.pixel-colher:hover ~ .pop-box {
+.pixel-colher:hover~.pop-box {
     display: block;
     opacity: 1;
 }
@@ -124,6 +159,7 @@
     width: 230px;
     border-radius: 8px;
 }
+
 .pixel-pop-title {
     display: block;
     font-size: 16px;
@@ -141,14 +177,90 @@
     width: 230px;
     color: #444;
     font-size: 14px;
-    
+
 }
 
-.pop-box-1 { left: 100px; top: 30px; }
-.pop-box-2 { right: 100px; bottom: 30px; }
-.pop-box-3 { right: 100px; bottom: 30px; }
-.pop-box-4 { left: 100px; bottom: 30px; }
-.pop-box-5 { left: 100px; bottom: 30px; }
-.pop-box-6 { right: 100px; bottom: 30px; }
-.pop-box-7 { right: 100px; bottom: 30px; }
-.pop-box-8 { right: 150px; bottom: 30px; }
+.pop-box-1 {
+    left: 100px;
+    top: 30px;
+}
+
+.pop-box-2 {
+    right: 100px;
+    bottom: 30px;
+}
+
+.pop-box-3 {
+    right: 100px;
+    bottom: 30px;
+}
+
+.pop-box-4 {
+    left: 100px;
+    bottom: 30px;
+}
+
+.pop-box-5 {
+    left: 100px;
+    bottom: 30px;
+}
+
+.pop-box-6 {
+    right: 100px;
+    bottom: 30px;
+}
+
+.pop-box-7 {
+    right: 100px;
+    bottom: 30px;
+}
+
+.pop-box-8 {
+    right: 150px;
+    bottom: 30px;
+}
+
+.galery-controls {
+    display: inline-grid;
+    gap: 8px;
+    position: fixed;
+    right: 48px;
+    top: 48px;
+    z-index: 9;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
+    background-color: #f7f7f7;
+}
+
+.galery-controls input {
+    display: block;
+
+
+
+}
+
+.galery-controls input[type='range'] {
+    cursor: pointer;
+}
+
+.galery-controls input[type='range'],
+.galery-controls input[type='range']::-webkit-slider-runnable-track,
+.galery-controls input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+
+.galery-controls input[type='range']::-webkit-slider-runnable-track {
+    width: 200px;
+    height: 20px;
+    background: #444;
+}
+
+
+.galery-controls input[type='range']::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    background-color: #666;
+}

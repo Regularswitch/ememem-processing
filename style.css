@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    /* background: rgba(0, 0, 0, .2);
+    border: 1px solid #000; */
+}
+
+:root {
+    --pixel-distance: 28px;
+}
+
+.gallery-pixel-area-1 {
+    grid-area: A1;
+    /* background-color: #000; */
+}
+
+.gallery-pixel-area-2 {
+    grid-area: A2;
+    /* background-color: #111; */
+}
+
+.gallery-pixel-area-3 {
+    grid-area: A3;
+    /* background-color: #222; */
+}
+
+.gallery-pixel-area-4 {
+    grid-area: A4;
+    /* background-color: #333; */
+}
+
+.gallery-pixel-area-5 {
+    grid-area: A5;
+    /* background-color: #444; */
+}
+
+.gallery-pixel-area-6 {
+    grid-area: A6;
+    /* background-color: #555; */
+}
+
+.gallery-pixel-area-7 {
+    grid-area: A7;
+    /* background-color: #666; */
+}
+
+.gallery-pixel-area-8 {
+    grid-area: A8;
+    /* background-color: #777; */
+}
+
+.gallery-pixel-item {
+    position: relative;
+}
+
+/* 1366x768 multiplo de 15 */
+
+.gallery-pixel {
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    grid-template-columns:  repeat(7, 165px) 1fr;
+    grid-template-rows:  repeat(5, 120px) 1fr;
+    grid-template-areas:
+        "A1 A1 A1 A3 A3 A3 A3 A3"
+        "A1 A1 A1 A3 A3 A3 A3 A3"
+        "A1 A1 A1 A4 A4 A4 A4 A4"
+        "A2 A2 A2 A4 A4 A4 A4 A4"
+        "A5 A5 A6 A6 A6 A6 A6 A7"
+        "A5 A5 A6 A6 A6 A6 A6 A8"
+    ;
+    overflow: hidden;
+}
+
+.pixel-colher {
+    position: absolute;
+    cursor: pointer;
+    z-index: 9;
+    transition: all .3s ease;
+    transform: scale(.8);
+}
+.pixel-colher:hover {
+    transform: scale(1);
+}
+.gallery-pixel-item > canvas {
+    position: absolute;
+    width: 100% !important;
+}
+
+.pixel-colher-position-1 { left: var(--pixel-distance) ; top: var(--pixel-distance);}
+.pixel-colher-position-2 { right: var(--pixel-distance) ; top: var(--pixel-distance);}
+.pixel-colher-position-3 { right: var(--pixel-distance) ; bottom: var(--pixel-distance);}
+.pixel-colher-position-4 { left: var(--pixel-distance) ; bottom: var(--pixel-distance); }
+.pixel-colher-position-5 { left: var(--pixel-distance) ; top: var(--pixel-distance);}
+.pixel-colher-position-6 { right: var(--pixel-distance) ; top: var(--pixel-distance);}
+.pixel-colher-position-7 { right: var(--pixel-distance) ; bottom: var(--pixel-distance);}
+.pixel-colher-position-8 { left: var(--pixel-distance) ; bottom: var(--pixel-distance); }
+
+
+
+.pop-box {
+    display: block;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #EEE;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, .5);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pixel-colher:hover ~ .pop-box {
+    display: block;
+    opacity: 1;
+}
+
+
+.pixel-pop-image {
+    display: block;
+    width: 230px;
+    border-radius: 8px;
+}
+.pixel-pop-title {
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 8px 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.pixel-pop-more {
+    display: block;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 230px;
+    color: #444;
+    font-size: 14px;
+    
+}
+
+.pop-box-1 { left: 100px; top: 30px; }
+.pop-box-2 { right: 100px; bottom: 30px; }
+.pop-box-3 { right: 100px; bottom: 30px; }
+.pop-box-4 { left: 100px; bottom: 30px; }
+.pop-box-5 { left: 100px; bottom: 30px; }
+.pop-box-6 { right: 100px; bottom: 30px; }
+.pop-box-7 { right: 100px; bottom: 30px; }
+.pop-box-8 { right: 150px; bottom: 30px; }

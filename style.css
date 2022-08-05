@@ -64,7 +64,7 @@
     width: 100%;
     min-height: 100vh;
     grid-template-columns: repeat(7, var(--box)) 1fr;
-    grid-template-rows: repeat(5, var(--h)) 1fr;
+    grid-template-rows: repeat(6, var(--h)) ;
     grid-template-areas:
         "A1 A1 A1 A3 A3 A3 A3 A3"
         "A1 A1 A1 A3 A3 A3 A3 A3"
@@ -73,7 +73,7 @@
         "A5 A5 A6 A6 A6 A6 A6 A7"
         "A5 A5 A6 A6 A6 A6 A6 A8"
     ;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .pixel-colher {

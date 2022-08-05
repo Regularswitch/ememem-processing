@@ -111,12 +111,14 @@ function arteGama($e) {
     globalThis.float = +$e.value
 }
 
+var Height = document.querySelector("#js-gallery-pixel").clientHeight
+
 function artePixel($e) {  
     
     globalThis.pixelation_level = +$e.value
     let $gallery = document.querySelector("#js-gallery-pixel")
     let tamanhoOneCol = parseInt( (window.innerWidth / 8) / +$e.value ) * +$e.value
-    let tamanhoOneRow = parseInt( (window.innerHeight / 6) / +$e.value ) * +$e.value
+    let tamanhoOneRow = parseInt( (Height / 6) / +$e.value ) * +$e.value
     
     $gallery.style.setProperty( '--box', `${tamanhoOneCol}px` )
     $gallery.style.setProperty( '--h', `${tamanhoOneRow}px` )
